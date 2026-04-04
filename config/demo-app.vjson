@@ -39,8 +39,10 @@
                             },
                             "Config": {},
                             "Network": {
-                                "Bind_Address": "127.0.0.1",
-                                "Announce_Interval": 5,
+                                "Bind_Address": [
+                                    "10.42.229.0/24",
+                                    "127.0.0.1"
+                                ],
                                 "TCP": {"Address": "localhost", "Port": 12082, "Server": true},
                                 "HTTP_Port": 13083
                             },
@@ -505,7 +507,10 @@
                                 "LogFolder": "c:/logs"
                             },
                             "Network": {
-                                "Bind_Address": "127.0.0.1",
+                                "Bind_Address": [
+                                    "192.168.42.0/24",
+                                    "127.0.0.1"
+                                ],
                                 "Announce_Interval": 5,
                                 "TCP": {
                                     "Address": "localhost",
@@ -528,6 +533,13 @@
                                 "Historian": {
                                     "Meta": {"VL_Type": "VL_Task", "VL_Task_Type": "Historian", "Historian_Role": "Primary"},
                                     "Memory_GB": 0.2
+                                },
+                                "HttpCmd": {
+                                    "Meta": {"VL_Type": "VL_Task", "VL_Task_Type": "HttpCmdBridge"},
+                                    "Channels": [
+                                        "Ox_PT_01",
+                                        "DO08_Int"
+                                    ]
                                 },
                                 "EventViewer": {"Meta": {"VL_Type": "VL_Task", "VL_Task_Type": "EventViewer"}},
                                 "GitUpdater":  {"Meta": {"VL_Type": "VL_Task", "VL_Task_Type": "GitUpdater"}},
